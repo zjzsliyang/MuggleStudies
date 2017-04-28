@@ -15,4 +15,7 @@ class IndexViewController: UIViewController {
     
   }
   
+  @IBAction func chosePhoto(_ sender: UIButton) {
+    
+  }
 }

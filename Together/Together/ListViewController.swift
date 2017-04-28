@@ -15,6 +15,9 @@ class ListViewController: UIViewController {
     
   }
   
+  @IBAction func backIndexView(_ sender: UIBarButtonItem) {
+    dismiss(animated: true, completion: nil)
+  }
   
   
 }
