@@ -8,15 +8,24 @@
 //
 
 import UIKit
-import Photos
 import PhotosUI
+import MobileCoreServices
 
 class IndexViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   @IBOutlet weak var backgroundImage: UIImageView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     
+    let userDefault = UserDefaults.standard
+    guard userDefault.bool(forKey: "isLogin") else {
+      self.performSegue(withIdentifier: "login", sender: nil)
+      return
+    }
   }
   
   @IBAction func chosePhoto(_ sender: UIButton) {
@@ -46,4 +55,13 @@ class IndexViewController: UIViewController, UIImagePickerControllerDelegate, UI
     imagePickerController.delegate = self
     return imagePickerController
   }()
+  
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    var livePhoto = PHLivePhoto()
+    
+    
+    backgroundImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+    backgroundImage.contentMode = .scaleAspectFill
+    picker.dismiss(animated: true, completion: nil)
+  }
 }

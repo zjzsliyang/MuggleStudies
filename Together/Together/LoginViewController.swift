@@ -32,36 +32,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   
   @IBAction func login(_ sender: UIButton) {
     let userParameters: Parameters = [
-      "username": username.text!,
+      "account": username.text!,
       "password": password.text!
     ]
     
-    Alamofire.request("", method: .post, parameters: userParameters).responseString { (response) in
+    Alamofire.request("http://115.159.1.222:3000/api/login", method: .post, parameters: userParameters).responseString { (response) in
       let responseData = response.result.value!
       let responseJson = JSON(data: responseData.data(using: String.Encoding.utf8)!)
-      
-      guard responseJson["info"]["number"].stringValue == (ERROR_INFO["SUCCESS"]?["number"])! else {
-        let alertView = UIAlertController(title: "登录失败", message: "", preferredStyle: .alert)
-        switch responseJson["info"]["number"].stringValue {
-        case (ERROR_INFO["REQUEST_ERR"]?["number"])!:
-          alertView.message = "请输入用户名或密码"
-        case (ERROR_INFO["PASSWD_ERR"]?["number"])!:
-          alertView.message = "用户名或密码错误，请重新输入"
-        case (ERROR_INFO["USER_ERR"]?["number"])!:
-          alertView.message = "不存在此用户"
-        default:
-          alertView.message = "未知错误，错误代码：" + responseJson["number"].stringValue
-          print("其他错误：" + responseJson["value"].stringValue)
-          print("错误代码：" + responseJson["number"].stringValue)
-        }
-        alertView.addAction(UIAlertAction(title: "好", style: .default, handler: { (action) in
-          self.dismiss(animated: true, completion: nil)
-        }))
-        return
-      }
-      
-      let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
-      hud.label.text = "登录中..."
+      print(responseJson)
     }
     
     let userDefault = UserDefaults.standard

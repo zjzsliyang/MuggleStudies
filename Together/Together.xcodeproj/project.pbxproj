@@ -11,7 +11,6 @@
 		2F06DF301EB33F600000039E /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F06DF2F1EB33F600000039E /* IndexViewController.swift */; };
 		2F06DF321EB34C680000039E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F06DF311EB34C680000039E /* ListViewController.swift */; };
 		2F7A02C51EB36B9A00B836DB /* ListAddNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7A02C41EB36B9A00B836DB /* ListAddNewViewController.swift */; };
-		2F7A02C71EB3825400B836DB /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7A02C61EB3825400B836DB /* config.swift */; };
 		2F7A02CA1EB39C7400B836DB /* GetHealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7A02C91EB39C7400B836DB /* GetHealthData.swift */; };
 		2F7A02CF1EB39FDF00B836DB /* HealthDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7A02CE1EB39FDF00B836DB /* HealthDetailViewController.swift */; };
 		2F9FD4B51EB2DCEB00D001F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9FD4B41EB2DCEB00D001F8 /* AppDelegate.swift */; };
@@ -28,7 +27,6 @@
 		2F06DF2F1EB33F600000039E /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		2F06DF311EB34C680000039E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		2F7A02C41EB36B9A00B836DB /* ListAddNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListAddNewViewController.swift; sourceTree = "<group>"; };
-		2F7A02C61EB3825400B836DB /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		2F7A02C81EB3878900B836DB /* Together.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Together.entitlements; sourceTree = "<group>"; };
 		2F7A02C91EB39C7400B836DB /* GetHealthData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetHealthData.swift; sourceTree = "<group>"; };
 		2F7A02CE1EB39FDF00B836DB /* HealthDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthDetailViewController.swift; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				2F06DF2D1EB2DE830000039E /* LoginViewController.swift */,
-				2F7A02C61EB3825400B836DB /* config.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -273,7 +270,6 @@
 				2F7A02C51EB36B9A00B836DB /* ListAddNewViewController.swift in Sources */,
 				2F9FD4B51EB2DCEB00D001F8 /* AppDelegate.swift in Sources */,
 				2F06DF321EB34C680000039E /* ListViewController.swift in Sources */,
-				2F7A02C71EB3825400B836DB /* config.swift in Sources */,
 				2F06DF301EB33F600000039E /* IndexViewController.swift in Sources */,
 				2F7A02CA1EB39C7400B836DB /* GetHealthData.swift in Sources */,
 				2FD334211EB360DD000F409F /* HealthViewController.swift in Sources */,
