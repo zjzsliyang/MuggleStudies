@@ -41,6 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
   
-  
+  func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    if shortcutItem.type == "addNewList" {
+      let activityViewController = storyboard.instantiateViewController(withIdentifier: "addNewListView") as UIViewController
+      self.window?.rootViewController = activityViewController
+    }
+  }
 }
 

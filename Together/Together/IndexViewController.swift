@@ -9,6 +9,7 @@
 
 import UIKit
 import Photos
+import PhotosUI
 
 class IndexViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   @IBOutlet weak var backgroundImage: UIImageView!
