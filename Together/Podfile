@@ -7,6 +7,8 @@ target 'Together' do
   pod 'Alamofire', '~> 4.4'
   pod 'MBProgressHUD', '~> 1.0.0'
   pod 'SwiftyJSON'
+  pod 'Koloda'
+  pod 'TextFieldEffects'
   # Pods for Together
 
 end

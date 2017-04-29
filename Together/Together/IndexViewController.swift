@@ -32,6 +32,11 @@ class IndexViewController: UIViewController, UIImagePickerControllerDelegate, UI
     let alertController = UIAlertController(title: "选择照片", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
     weak var weakself = self
     let alertActionLib = UIAlertAction(title: "相册", style: .default) { (_) -> Void in
+      if #available(iOS 9.1, *) {
+        self.imagePickerController.mediaTypes = [kUTTypeLivePhoto as String, kUTTypeImage as String]
+      } else {
+        self.imagePickerController.mediaTypes = [kUTTypeImage as String]
+      }
       self.imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
       self.present(self.imagePickerController, animated: true, completion: nil)
     }

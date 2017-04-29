@@ -11,9 +11,11 @@ import ContactsUI
 
 class HealthDetailViewController: UIViewController, CNContactPickerDelegate {
   var phoneNumber: String?
-  
+  @IBOutlet weak var healthChart: UIWebView!
+
   override func viewDidLoad() {
     super.viewDidLoad()
+    healthChart.loadRequest(URLRequest(url: URL(string: "http://115.159.1.222:3000/h5/healthy/my/chart?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50Ijoic29uZ3dlaSIsInBhc3N3b3JkIjoiaGFoYWhhIiwiZGF0ZSI6IjE0OTM0NDE0NjUwMTciLCJpYXQiOjE0OTM0NDE0NjV9.YsDPI4MdLsnA-qWFSdxMSrvnyQPLtj4_zb5of5Jmgb8")!))
   }
   @IBAction func getContact(_ sender: UIButton) {
     let contactPickerViewController = CNContactPickerViewController()

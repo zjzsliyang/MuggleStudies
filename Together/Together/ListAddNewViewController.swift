@@ -47,10 +47,13 @@ class ListAddNewViewController: UIViewController, UITextViewDelegate {
       textView.textColor = UIColor.lightGray
     }
   }
+  
+  @IBAction func touchDown(_ sender: UIControl) {
+    self.view.endEditing(true)
+  }
 
   @IBAction func backListView(_ sender: UIBarButtonItem) {
     dismiss(animated: true, completion: nil)
   }
-  
   
 }

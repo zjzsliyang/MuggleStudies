@@ -17,6 +17,7 @@
 		2F9FD4BA1EB2DCEB00D001F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F9FD4B81EB2DCEB00D001F8 /* Main.storyboard */; };
 		2F9FD4BC1EB2DCEB00D001F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F9FD4BB1EB2DCEB00D001F8 /* Assets.xcassets */; };
 		2F9FD4BF1EB2DCEB00D001F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F9FD4BD1EB2DCEB00D001F8 /* LaunchScreen.storyboard */; };
+		2FA42B991EB4BEB8007A7078 /* FamilyAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA42B981EB4BEB8007A7078 /* FamilyAlbumViewController.swift */; };
 		2FD334211EB360DD000F409F /* HealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD334201EB360DD000F409F /* HealthViewController.swift */; };
 		2FD334231EB36113000F409F /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FD334221EB36113000F409F /* HealthKit.framework */; };
 		70DF28E04F8A3005C1952F14 /* Pods_Together.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC708B2D0B3319586369A4E5 /* Pods_Together.framework */; };
@@ -36,6 +37,7 @@
 		2F9FD4BB1EB2DCEB00D001F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F9FD4BE1EB2DCEB00D001F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F9FD4C01EB2DCEB00D001F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FA42B981EB4BEB8007A7078 /* FamilyAlbumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FamilyAlbumViewController.swift; sourceTree = "<group>"; };
 		2FD334201EB360DD000F409F /* HealthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthViewController.swift; sourceTree = "<group>"; };
 		2FD334221EB36113000F409F /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		5514F04478158B40F9C9A4F4 /* Pods-Together.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Together.release.xcconfig"; path = "Pods/Target Support Files/Pods-Together/Pods-Together.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				2F7A02C81EB3878900B836DB /* Together.entitlements */,
 				2F9FD4B41EB2DCEB00D001F8 /* AppDelegate.swift */,
 				2F06DF2F1EB33F600000039E /* IndexViewController.swift */,
+				2FA42B981EB4BEB8007A7078 /* FamilyAlbumViewController.swift */,
 				2F7A02CB1EB39D6F00B836DB /* Login */,
 				2F7A02CC1EB39D7C00B836DB /* List */,
 				2F7A02CD1EB39D8300B836DB /* Health */,
@@ -269,6 +272,7 @@
 				2F7A02CF1EB39FDF00B836DB /* HealthDetailViewController.swift in Sources */,
 				2F7A02C51EB36B9A00B836DB /* ListAddNewViewController.swift in Sources */,
 				2F9FD4B51EB2DCEB00D001F8 /* AppDelegate.swift in Sources */,
+				2FA42B991EB4BEB8007A7078 /* FamilyAlbumViewController.swift in Sources */,
 				2F06DF321EB34C680000039E /* ListViewController.swift in Sources */,
 				2F06DF301EB33F600000039E /* IndexViewController.swift in Sources */,
 				2F7A02CA1EB39C7400B836DB /* GetHealthData.swift in Sources */,

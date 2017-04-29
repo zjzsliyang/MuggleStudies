@@ -1,18 +1,27 @@
 PODS:
   - Alamofire (4.4.0)
+  - Koloda (4.1):
+    - pop (~> 1.0)
   - MBProgressHUD (1.0.0)
+  - pop (1.0.9)
   - SwiftyJSON (3.1.4)
+  - TextFieldEffects (1.3.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - Koloda
   - MBProgressHUD (~> 1.0.0)
   - SwiftyJSON
+  - TextFieldEffects
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Koloda: 6c4fa3ce9a68776a8ef973311e53fdda432799a8
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  TextFieldEffects: 9e5cce561ea39c75b86e9d3637601727a67e8b23
 
-PODFILE CHECKSUM: 690cbe11ba7d90b0b9746791b36e3e34a3c258b9
+PODFILE CHECKSUM: 05203bf82e3483e695fd887f217dfb549d947304
 
 COCOAPODS: 1.1.1

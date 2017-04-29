@@ -324,7 +324,7 @@
                         <viewControllerLayoutGuide type="top" id="KFg-GN-Pmb"/>
                         <viewControllerLayoutGuide type="bottom" id="clN-gn-VQe"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dhQ-x7-oEV">
+                    <view key="view" contentMode="scaleToFill" id="dhQ-x7-oEV" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -389,6 +389,9 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="touchDown:" destination="NUz-Xz-p67" eventType="touchDown" id="NQ0-XB-eLD"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="alertLabel" destination="8sK-5a-PpF" id="xpx-jA-208"/>
@@ -429,21 +432,73 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkz-ns-afr">
-                                <rect key="frame" x="218" y="184" width="46" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="healthLongCard" translatesAutoresizingMaskIntoConstraints="NO" id="LNM-rx-HvY">
+                                <rect key="frame" x="19" y="75" width="340" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkz-ns-afr">
+                                <rect key="frame" x="299" y="89" width="40" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="healthCall"/>
                                 <connections>
                                     <action selector="getContact:" destination="2Zr-tE-jI5" eventType="touchUpInside" id="ATl-gA-1Rb"/>
                                 </connections>
                             </button>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7pg-cS-818">
+                                <rect key="frame" x="0.0" y="162" width="375" height="505"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="奶奶" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Fd-zg-qhq">
+                                <rect key="frame" x="100" y="80" width="57" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="healthGrandma" translatesAutoresizingMaskIntoConstraints="NO" id="KVL-LG-foG">
+                                <rect key="frame" x="35" y="84" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="listClock" translatesAutoresizingMaskIntoConstraints="NO" id="yte-ue-5XF">
+                                <rect key="frame" x="100" y="118" width="18" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="更新于2017年5月1日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiy-3s-zyM">
+                                <rect key="frame" x="129" y="117" width="159" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="healthChart" destination="7pg-cS-818" id="GNC-LJ-Z7S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aa2-6C-hDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="2267"/>
+            <point key="canvasLocation" x="32.799999999999997" y="2266.4167916041979"/>
+        </scene>
+        <!--Family Album View Controller-->
+        <scene sceneID="ufu-fL-kLq">
+            <objects>
+                <viewController id="F7t-KQ-qWU" customClass="FamilyAlbumViewController" customModule="Together" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NYL-h8-g2r"/>
+                        <viewControllerLayoutGuide type="bottom" id="5PR-7S-dZi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aAM-Kl-wAz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="30F-gx-AT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1484" y="1630"/>
         </scene>
         <!--Health View Controller-->
         <scene sceneID="lB3-v2-SAh">
@@ -586,6 +641,9 @@
                                 <rect key="frame" x="322" y="110" width="30" height="8"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Detail"/>
+                                <connections>
+                                    <segue destination="2Zr-tE-jI5" kind="showDetail" id="bQS-sg-kGr"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BST-bV-ZD7">
                                 <rect key="frame" x="258" y="132" width="49" height="21"/>
@@ -606,18 +664,20 @@
     <resources>
         <image name="Detail" width="86" height="21"/>
         <image name="healthBackground" width="752" height="1179"/>
+        <image name="healthCall" width="80" height="83"/>
         <image name="healthCard" width="312" height="204"/>
         <image name="healthGrandma" width="100" height="100"/>
         <image name="healthHeartbeat" width="50" height="31"/>
+        <image name="healthLongCard" width="681" height="138"/>
         <image name="healthMama" width="99" height="99"/>
         <image name="healthShoes" width="47" height="27"/>
         <image name="indexBackground" width="750" height="780"/>
         <image name="indexCommunication" width="108" height="145"/>
         <image name="indexHealth" width="100" height="142"/>
-        <image name="indexList" width="120" height="141"/>
+        <image name="indexList" width="112" height="141"/>
         <image name="indexPhotoChosen" width="66" height="61"/>
         <image name="indexWaveline" width="750" height="156"/>
-        <image name="indexWish" width="104" height="140"/>
+        <image name="indexWish" width="100" height="144"/>
         <image name="listAlarm" width="61" height="64"/>
         <image name="listClock" width="23" height="23"/>
         <image name="listCreateNew" width="660" height="209"/>
@@ -631,5 +691,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nwl-Eg-yLi"/>
+        <segue reference="bQS-sg-kGr"/>
     </inferredMetricsTieBreakers>
 </document>
