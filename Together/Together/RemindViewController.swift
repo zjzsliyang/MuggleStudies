@@ -16,11 +16,11 @@ class RemindViewController: UIViewController {
     self.hidesBottomBarWhenPushed = true
     self.tabBarController?.tabBar.isHidden = true
     
-    let alertController = UIAlertController(title: "妈妈👪", message: "记得七点吃药", preferredStyle: .alert)
+    let alertController = UIAlertController(title: "该给妈妈打个电话了⚠️", message: "你已经十天没打啦", preferredStyle: .alert)
     let alertActionOk = UIAlertAction(title: "好", style: .default, handler: nil)
-    let alertActionLater = UIAlertAction(title: "稍等", style: .cancel, handler: nil)
+    //let alertActionLater = UIAlertAction(title: "稍等", style: .cancel, handler: nil)
     alertController.addAction(alertActionOk)
-    alertController.addAction(alertActionLater)
+    //alertController.addAction(alertActionLater)
     present(alertController, animated: true, completion: nil)
   }
   

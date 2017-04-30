@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F000AB51EB630E80042E9B9 /* HealthTotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F000AB41EB630E80042E9B9 /* HealthTotalViewController.swift */; };
 		2F06DF2E1EB2DE830000039E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F06DF2D1EB2DE830000039E /* LoginViewController.swift */; };
 		2F06DF301EB33F600000039E /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F06DF2F1EB33F600000039E /* IndexViewController.swift */; };
 		2F06DF321EB34C680000039E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F06DF311EB34C680000039E /* ListViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F000AB41EB630E80042E9B9 /* HealthTotalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthTotalViewController.swift; sourceTree = "<group>"; };
 		2F06DF2D1EB2DE830000039E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2F06DF2F1EB33F600000039E /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		2F06DF311EB34C680000039E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				2FD334201EB360DD000F409F /* HealthViewController.swift */,
 				2F7A02CE1EB39FDF00B836DB /* HealthDetailViewController.swift */,
 				2F7A02C91EB39C7400B836DB /* GetHealthData.swift */,
+				2F000AB41EB630E80042E9B9 /* HealthTotalViewController.swift */,
 			);
 			name = Health;
 			sourceTree = "<group>";
@@ -192,6 +195,9 @@
 							com.apple.HealthKit = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 0;
+							};
 						};
 					};
 				};
@@ -293,6 +299,7 @@
 				2F06DF301EB33F600000039E /* IndexViewController.swift in Sources */,
 				2F7A02CA1EB39C7400B836DB /* GetHealthData.swift in Sources */,
 				2FD334211EB360DD000F409F /* HealthViewController.swift in Sources */,
+				2F000AB51EB630E80042E9B9 /* HealthTotalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

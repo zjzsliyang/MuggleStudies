@@ -96,5 +96,5 @@ class FamilyAlbumViewController: UIViewController, KolodaViewDataSource, KolodaV
   func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
     return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)?[0] as? OverlayView
   }
-  
+
 }
