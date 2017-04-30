@@ -9,6 +9,8 @@
 import UIKit
 
 open class OverlayView: UIView {
+    @IBOutlet weak var overlayImageView: UIImageView!
+
     
     open var overlayState: SwipeResultDirection?
     
