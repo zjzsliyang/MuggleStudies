@@ -10,17 +10,40 @@
 import UIKit
 import PhotosUI
 import MobileCoreServices
+import UserNotifications
 
 class IndexViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-  @IBOutlet weak var backgroundImage: UIImageView!
+  @IBOutlet weak var backgroundView: UIView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+/*    Notifications */
+    
+//    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+//      if error != nil {
+//        print(error)
+//      }
+//    }
+//    
+//    let content = UNMutableNotificationContent()
+//    content.title = "Time Funck"
+//    content.subtitle = "subtitle"
+//    content.body = "body"
+//    
+//    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: true)
+//    
+//    let request = UNNotificationRequest(identifier: "cn.edu.tongji.Together.fisrtNotificationIndentifier", content: content, trigger: trigger)
+//    UNUserNotificationCenter.current().add(request) { (error) in
+//      if error == nil {
+//        print("hello")
+//      }
+//    }
+    
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    
     let userDefault = UserDefaults.standard
     guard userDefault.bool(forKey: "isLogin") else {
       self.performSegue(withIdentifier: "login", sender: nil)
@@ -60,11 +83,19 @@ class IndexViewController: UIViewController, UIImagePickerControllerDelegate, UI
   }()
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-    var livePhoto = PHLivePhoto()
-    
-    
-    backgroundImage.image = info[UIImagePickerControllerOriginalImage] as? UIImage
-    backgroundImage.contentMode = .scaleAspectFill
+    let livePhoto: PHLivePhoto? = info[UIImagePickerControllerLivePhoto] as? PHLivePhoto
+    if (livePhoto != nil) {
+      let livePhotoView = PHLivePhotoView(frame: backgroundView.frame)
+      livePhotoView.livePhoto = info[UIImagePickerControllerLivePhoto] as? PHLivePhoto
+      livePhotoView.startPlayback(with: .full)
+      livePhotoView.contentMode = .scaleAspectFill
+      backgroundView.addSubview(livePhotoView)
+    } else {
+      let staticPhotoView = UIImageView(frame: backgroundView.frame)
+      staticPhotoView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+      staticPhotoView.contentMode = .scaleAspectFill
+      backgroundView.addSubview(staticPhotoView)
+    }
     picker.dismiss(animated: true, completion: nil)
   }
 }

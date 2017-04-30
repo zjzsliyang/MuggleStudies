@@ -36,8 +36,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>This app wants to access your LivePhotos.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>This app wants to access your camera.</string>
 	<key>NSContactsUsageDescription</key>
