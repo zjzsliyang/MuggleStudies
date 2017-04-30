@@ -224,10 +224,10 @@
             </objects>
             <point key="canvasLocation" x="1018" y="725"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Together Tab Bar View Controller-->
         <scene sceneID="NQT-EK-5Kp">
             <objects>
-                <tabBarController id="MXH-4Q-gnv" sceneMemberID="viewController">
+                <tabBarController id="MXH-4Q-gnv" customClass="TogetherTabBarViewController" customModule="Together" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="et3-Iv-gL2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -536,42 +536,26 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dR1-G6-Lj7">
                                 <rect key="frame" x="327" y="28" width="32" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btn_undo"/>
+                                <state key="normal" image="albumUndo"/>
                                 <connections>
                                     <action selector="undoButtonTapped:" destination="F7t-KQ-qWU" eventType="touchUpInside" id="Igl-oN-oSi"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dLU-4K-qxW" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="45" y="104" width="284" height="320"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jyk-yr-B7j">
-                                <rect key="frame" x="89" y="455" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btn_skip_normal"/>
-                                <connections>
-                                    <action selector="leftButtonTapped:" destination="F7t-KQ-qWU" eventType="touchUpInside" id="cn8-pX-csO"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nuc-PV-cPq">
-                                <rect key="frame" x="253" y="455" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="btn_like_normal"/>
-                                <connections>
-                                    <action selector="rightButtonTapped:" destination="F7t-KQ-qWU" eventType="touchUpInside" id="vRb-pR-2Gf"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s2u-HX-kOb">
-                                <rect key="frame" x="155" y="516" width="64" height="64"/>
+                                <rect key="frame" x="155" y="521" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Plus"/>
+                                <state key="normal" image="albumAdd"/>
                                 <connections>
                                     <action selector="addPhoto:" destination="F7t-KQ-qWU" eventType="touchUpInside" id="1GS-Yp-NTB"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dLU-4K-qxW" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="45" y="88" width="284" height="320"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.10897842639593913" green="0.10897842639593913" blue="0.10897842639593913" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="相册" image="TabbarAlbum" selectedImage="TabbarAlbum" id="X4o-Ab-eXp"/>
                     <connections>
@@ -748,9 +732,8 @@
         <image name="TabbarAlbum" width="23" height="25"/>
         <image name="TabbarIndex" width="29" height="27"/>
         <image name="TabbarSun" width="39" height="40"/>
-        <image name="btn_like_normal" width="32" height="32"/>
-        <image name="btn_skip_normal" width="32" height="32"/>
-        <image name="btn_undo" width="21" height="21"/>
+        <image name="albumAdd" width="113" height="113"/>
+        <image name="albumUndo" width="21" height="21"/>
         <image name="healthBackground" width="752" height="1179"/>
         <image name="healthCall" width="80" height="83"/>
         <image name="healthCard" width="312" height="204"/>

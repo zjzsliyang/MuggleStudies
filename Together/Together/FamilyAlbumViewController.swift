@@ -13,7 +13,7 @@ import MobileCoreServices
 
 private var numberOfCards: Int = 5
 
-class FamilyAlbumViewController: UIViewController, KolodaViewDataSource, KolodaViewDelegate {
+class FamilyAlbumViewController: UIViewController, KolodaViewDataSource, KolodaViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   @IBOutlet weak var albumView: KolodaView!
   
   fileprivate var dataSource: [UIImage] = {
@@ -34,17 +34,36 @@ class FamilyAlbumViewController: UIViewController, KolodaViewDataSource, KolodaV
   }
   
   @IBAction func addPhoto(_ sender: UIButton) {
+    let alertController = UIAlertController(title: "选择照片", message: nil, preferredStyle: .actionSheet)
+    let alertActionLib = UIAlertAction(title: "相册", style: .default) { (_) in
+      if #available(iOS 9.1, *) {
+        self.imagePickerController.mediaTypes = [kUTTypeLivePhoto as String, kUTTypeImage as String]
+      } else {
+        self.imagePickerController.mediaTypes = [kUTTypeImage as String]
+      }
+      self.imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
+      self.present(self.imagePickerController, animated: true, completion: nil)
+    }
+    let alertActionCamera = UIAlertAction(title: "相机", style: .default) { (_) in
+      if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+        self.imagePickerController.sourceType = .camera
+        self.present(self.imagePickerController, animated: true, completion: nil)
+      }
+    }
+    let alertActionCancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
     
+    alertController.addAction(alertActionLib)
+    alertController.addAction(alertActionCamera)
+    alertController.addAction(alertActionCancel)
+    
+    self.present(alertController, animated: true, completion: nil)
   }
   
-  
-  @IBAction func leftButtonTapped(_ sender: UIButton) {
-    albumView.swipe(.left)
-  }
-  
-  @IBAction func rightButtonTapped(_ sender: UIButton) {
-    albumView.swipe(.right)
-  }
+  private lazy var imagePickerController: UIImagePickerController = {
+    let imagePickerController = UIImagePickerController()
+    imagePickerController.delegate = self
+    return imagePickerController
+  }()
   
   @IBAction func undoButtonTapped(_ sender: UIButton) {
     albumView.revertAction()

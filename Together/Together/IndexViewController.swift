@@ -29,9 +29,8 @@ class IndexViewController: UIViewController, UIImagePickerControllerDelegate, UI
   }
   
   @IBAction func chosePhoto(_ sender: UIButton) {
-    let alertController = UIAlertController(title: "选择照片", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
-    weak var weakself = self
-    let alertActionLib = UIAlertAction(title: "相册", style: .default) { (_) -> Void in
+    let alertController = UIAlertController(title: "选择照片", message: nil, preferredStyle: .actionSheet)
+    let alertActionLib = UIAlertAction(title: "相册", style: .default) { (_) in
       if #available(iOS 9.1, *) {
         self.imagePickerController.mediaTypes = [kUTTypeLivePhoto as String, kUTTypeImage as String]
       } else {
@@ -43,11 +42,10 @@ class IndexViewController: UIViewController, UIImagePickerControllerDelegate, UI
     let alertActionCamera = UIAlertAction(title: "相机", style: .default) { (_) in
       if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
         self.imagePickerController.sourceType = .camera
-        self.present(weakself!.imagePickerController, animated: true, completion: nil)
+        self.present(self.imagePickerController, animated: true, completion: nil)
       }
     }
-    let alertActionCancel = UIAlertAction(title: "取消", style: .cancel) { (_) -> Void in
-    }
+    let alertActionCancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
     
     alertController.addAction(alertActionLib)
     alertController.addAction(alertActionCamera)
