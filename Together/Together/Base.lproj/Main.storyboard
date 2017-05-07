@@ -213,12 +213,6 @@
                     <view key="view" contentMode="scaleToFill" id="T9M-7Z-lWb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="_IMG_3179" translatesAutoresizingMaskIntoConstraints="NO" id="AoL-xU-zcD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="TabbarSun" selectedImage="TabbarSun" id="slR-4e-1Bm"/>
@@ -916,9 +910,8 @@
         <image name="TabbarAlbum" width="23" height="25"/>
         <image name="TabbarIndex" width="29" height="27"/>
         <image name="TabbarSun" width="39" height="40"/>
-        <image name="_IMG_3179" width="750" height="1334"/>
         <image name="albumAdd" width="113" height="113"/>
-        <image name="albumBackground" width="580" height="928"/>
+        <image name="albumBackground" width="769" height="1025"/>
         <image name="albumUndo" width="21" height="21"/>
         <image name="detailFather" width="118" height="117"/>
         <image name="healthAunt" width="55" height="55"/>

@@ -18,9 +18,9 @@ func getHealthData() {
     var heartRateQuery: HKSampleQuery?
     let heartRateUnit: HKUnit = HKUnit(from: "count/min")
     let stepsType: HKQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
-    let stepsQuery: HKStatisticsQuery?
+//    let stepsQuery: HKStatisticsQuery?
     
-    let readingTypes: Set = Set([heartRateType])
+    let readingTypes: Set = Set([heartRateType, stepsType])
     healthStore?.requestAuthorization(toShare: nil, read: readingTypes, completion: { (success, error) -> Void in
       if !success {
         print("error")
@@ -37,7 +37,6 @@ func getHealthData() {
     
     heartRateQuery = HKSampleQuery(sampleType: heartRateType, predicate: predicate, limit: 25, sortDescriptors: sortDescriptor, resultsHandler: { (query:HKSampleQuery, result:[HKSample]?, error:Error?) -> Void in
       guard error == nil else { print("error"); return }
-      
       var arrDict = [Dictionary<String, Any>]()
       for iter in 0 ..< result!.count {
         guard let currData:HKQuantitySample = result![iter] as? HKQuantitySample else { return }
@@ -46,24 +45,26 @@ func getHealthData() {
         
       }
       let patameters : Parameters = ["heartbeat":arrDict, "step": []]
-      Alamofire.request("http://10.0.1.8:3000/api/healthy?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoidGVzdCIsInBhc3N3b3JkIjoicSIsImRhdGUiOiIxNDkzMjA1MDgyNDI2IiwiaWF0IjoxNDkzMjA1MDgyfQ.LII_SHxwoQ0lTiTu-bVnF2hZLxhVMHmR3XtwN6v4ELs", method: .post, parameters: patameters, encoding: JSONEncoding.default)
+      _ = Alamofire.request("http://10.0.1.8:3000/api/healthy?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2NvdW50IjoidGVzdCIsInBhc3N3b3JkIjoicSIsImRhdGUiOiIxNDkzMjA1MDgyNDI2IiwiaWF0IjoxNDkzMjA1MDgyfQ.LII_SHxwoQ0lTiTu-bVnF2hZLxhVMHmR3XtwN6v4ELs", method: .post, parameters: patameters, encoding: JSONEncoding.default)
     })
     healthStore?.execute(heartRateQuery!)
     
-    //      let interval:NSDateComponents = NSDateComponents()
-    //      interval.day = 1
-    //      stepQuery = HKStatisticsCollectionQuery(quantityType: stepType, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate as Date, intervalComponents: interval as DateComponents)
-    //      stepQuery?.initialResultsHandler = { query, result, error in
-    //        if error != nil {
-    //          return
-    //        }
-    //        result?.enumerateStatistics(from: self.yesterday as Date, to: self.today as Date, with: { (statistics, stop) in
-    //          if let quantity = statistics.sumQuantity() {
-    //            let steps = quantity.doubleValue(for: HKUnit.count())
-    //
-    //            print("Steps = \(steps)")
-    //          }
-    //        })
-    //      }
+    let interval:NSDateComponents = NSDateComponents()
+    interval.day = 1
+    let stepsQuery = HKStatisticsCollectionQuery(quantityType: stepsType, quantitySamplePredicate: predicate, options: [.cumulativeSum], anchorDate: startDate as Date, intervalComponents: interval as DateComponents)
+    stepsQuery.initialResultsHandler = { query, result, error in
+      if error != nil {
+        print(error!)
+        return
+      }
+      result?.enumerateStatistics(from: startDate as Date, to: endDate!, with: { (statistics, stop) in
+        if let quantity = statistics.sumQuantity() {
+          let steps = quantity.doubleValue(for: HKUnit.count())
+
+          print("Steps = \(steps)")
+        }
+      })
+    }
+    healthStore?.execute(stepsQuery)
   }
 }
