@@ -164,6 +164,9 @@
                                                     <constraint firstAttribute="width" constant="50" id="lMN-xh-RSW"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="indexWish"/>
+                                                <connections>
+                                                    <segue destination="A6L-ju-Njd" kind="show" id="6PY-Zj-sHm"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbG-jX-84N">
                                                 <rect key="frame" x="130" y="0.0" width="50" height="70"/>
@@ -202,10 +205,10 @@
             </objects>
             <point key="canvasLocation" x="26.399999999999999" y="725.48725637181417"/>
         </scene>
-        <!--Remind View Controller-->
+        <!--View Controller-->
         <scene sceneID="g16-aY-asY">
             <objects>
-                <viewController id="Oj8-MK-hk1" customClass="RemindViewController" customModule="Together" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Oj8-MK-hk1" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nag-QZ-IsB"/>
                         <viewControllerLayoutGuide type="bottom" id="QNx-Lo-5Kw"/>
@@ -581,7 +584,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9Y-3a-IhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="770" y="2267"/>
+            <point key="canvasLocation" x="26" y="2967"/>
         </scene>
         <!--相册-->
         <scene sceneID="ufu-fL-kLq">
@@ -620,12 +623,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZg-0w-3HQ">
+                                <rect key="frame" x="155" y="521" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="相册" image="TabbarAlbum" selectedImage="TabbarAlbum" id="X4o-Ab-eXp"/>
                     <connections>
-                        <outlet property="albumView" destination="dLU-4K-qxW" id="28E-MN-pMN"/>
+                        <outlet property="albumTestView" destination="aZg-0w-3HQ" id="Pg7-zK-Lyt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30F-gx-AT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -904,6 +911,45 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="1540.4797601199402"/>
         </scene>
+        <!--Wish View Controller-->
+        <scene sceneID="z97-S1-hSa">
+            <objects>
+                <viewController id="A6L-ju-Njd" customClass="WishViewController" customModule="Together" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xnn-Ho-rBB"/>
+                        <viewControllerLayoutGuide type="bottom" id="OQc-dX-zpH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zSK-L8-b9t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wishBackground" translatesAutoresizingMaskIntoConstraints="NO" id="vB2-Kt-cEN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="27X-kC-0Ig">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="barTintColor" red="0.87082451579999998" green="0.39554470780000001" blue="0.44852614400000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="心愿清单" id="yYV-pl-W4I">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="5bC-o2-pH0">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="40P-j2-3Mh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752.79999999999995" y="1541.3793103448277"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Detail" width="86" height="21"/>
@@ -941,6 +987,7 @@
         <image name="loginLine" width="459" height="19"/>
         <image name="loginPasswordIcon" width="39" height="49"/>
         <image name="loginUserIcon" width="59" height="59"/>
+        <image name="wishBackground" width="763" height="1006"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nwl-Eg-yLi"/>

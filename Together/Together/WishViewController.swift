@@ -1,5 +1,5 @@
 //
-//  RemindViewController.swift
+//  WishViewController.swift
 //  Together
 //
 //  Created by Yang Li on 30/04/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RemindViewController: UIViewController {
+class WishViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 import Koloda
 import PhotosUI
 import MobileCoreServices
@@ -25,11 +26,13 @@ class FamilyAlbumViewController: UIViewController, KolodaViewDataSource, KolodaV
     return array
   }()
   
+  @IBOutlet weak var albumTestView: UIWebView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    albumView.delegate = self
-    albumView.dataSource = self
+    albumTestView.loadRequest(URLRequest(url: URL(string: "http://115.159.1.222:3000/h5/test")!))
+//    albumView.delegate = self
+//    albumView.dataSource = self
     self.modalTransitionStyle = UIModalTransitionStyle.flipHorizontal
   }
   
@@ -57,6 +60,43 @@ class FamilyAlbumViewController: UIViewController, KolodaViewDataSource, KolodaV
     alertController.addAction(alertActionCancel)
     
     self.present(alertController, animated: true, completion: nil)
+  }
+  
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    let livePhoto: PHLivePhoto? = info[UIImagePickerControllerLivePhoto] as? PHLivePhoto
+    if (livePhoto != nil) {
+      print("todo")
+    } else {
+      let staticPhoto = info[UIImagePickerControllerOriginalImage] as! UIImage
+      var data = UIImagePNGRepresentation(staticPhoto)!
+      
+      print(data)
+      let documentPath: String = NSHomeDirectory().appending("Document")
+      let fileManager = FileManager.default
+      do {
+        try fileManager.createDirectory(atPath: documentPath, withIntermediateDirectories: true, attributes: nil)
+      } catch let error {
+        print("fuck")
+        print(error)
+      }
+      fileManager.createFile(atPath: documentPath + "/image.png", contents: data, attributes: nil)
+      let filePath = documentPath + "/image.png"
+      print("filePath" + String(filePath))
+      
+      Alamofire.upload(data, to: "http://10.0.1.8:3000/api/file").responseJSON(completionHandler: { (response) in
+        print(response)
+      })
+      
+//      Alamofire.upload(data, to: "http://10.0.1.8:3000/api/file", method: .post, headers: ["content-type":"multipart/form-data; boundary=\(boundary)"]).responseJSON(completionHandler: { (response) in
+//        print(response)
+//      })
+//      Alamofire.upload(multipartFormData: { (multipartFormData) in
+//        multipartFormData.append(data!, withName: "image")
+//      }, usingThreshold: UInt64.init(), to: "http://10.0.1.8:3000/api/file", method: .post, headers: ["content-type":"multipart/form-data"], encodingCompletion: { (response) in
+//        print(response)
+//      })
+    }
+    picker.dismiss(animated: true, completion: nil)
   }
   
   private lazy var imagePickerController: UIImagePickerController = {

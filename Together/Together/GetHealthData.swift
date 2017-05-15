@@ -11,6 +11,10 @@ import HealthKit
 import Alamofire
 
 func getHealthData() {
+//  var healthTime = UserDefaults.standard
+//  let uploadComponents = NSCalendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: <#T##Date#>)
+//  let uploadTime = NSCalendar.current.date(from: <#T##DateComponents#>)
+  
   var healthStore: HKHealthStore?
   if HKHealthStore.isHealthDataAvailable() {
     healthStore = HKHealthStore()
@@ -18,7 +22,6 @@ func getHealthData() {
     var heartRateQuery: HKSampleQuery?
     let heartRateUnit: HKUnit = HKUnit(from: "count/min")
     let stepsType: HKQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
-//    let stepsQuery: HKStatisticsQuery?
     
     let readingTypes: Set = Set([heartRateType, stepsType])
     healthStore?.requestAuthorization(toShare: nil, read: readingTypes, completion: { (success, error) -> Void in
@@ -34,13 +37,13 @@ func getHealthData() {
     let endDate = calender.date(byAdding: .day, value: 1, to: startDate)
     let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
     let sortDescriptor = [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)]
-    
-    heartRateQuery = HKSampleQuery(sampleType: heartRateType, predicate: predicate, limit: 25, sortDescriptors: sortDescriptor, resultsHandler: { (query:HKSampleQuery, result:[HKSample]?, error:Error?) -> Void in
+    heartRateQuery = HKSampleQuery(sampleType: heartRateType, predicate: predicate, limit: 1000, sortDescriptors: sortDescriptor, resultsHandler: { (query:HKSampleQuery, result:[HKSample]?, error:Error?) -> Void in
       guard error == nil else { print("error"); return }
       var arrDict = [Dictionary<String, Any>]()
       for iter in 0 ..< result!.count {
         guard let currData:HKQuantitySample = result![iter] as? HKQuantitySample else { return }
         let dict = ["number":Double(currData.quantity.doubleValue(for: heartRateUnit)), "date": String(describing: currData.startDate)] as [String : Any]
+        print(dict)
         arrDict.append(dict)
         
       }
