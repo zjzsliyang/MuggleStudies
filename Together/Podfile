@@ -9,6 +9,7 @@ target 'Together' do
   pod 'SwiftyJSON'
   pod 'Koloda'
   pod 'TextFieldEffects'
+  pod 'PageMenu'
   # Pods for Together
 
 end

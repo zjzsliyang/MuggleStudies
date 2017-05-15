@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F000AB51EB630E80042E9B9 /* HealthTotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F000AB41EB630E80042E9B9 /* HealthTotalViewController.swift */; };
+		2F0543A11EC9DADC001F8BFB /* WishCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0543A01EC9DADC001F8BFB /* WishCard.swift */; };
+		2F0543A41EC9E0E7001F8BFB /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0543A31EC9E0E7001F8BFB /* TestViewController.swift */; };
 		2F06DF2E1EB2DE830000039E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F06DF2D1EB2DE830000039E /* LoginViewController.swift */; };
 		2F06DF301EB33F600000039E /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F06DF2F1EB33F600000039E /* IndexViewController.swift */; };
 		2F06DF321EB34C680000039E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F06DF311EB34C680000039E /* ListViewController.swift */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		2F000AB41EB630E80042E9B9 /* HealthTotalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthTotalViewController.swift; sourceTree = "<group>"; };
+		2F0543A01EC9DADC001F8BFB /* WishCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WishCard.swift; sourceTree = "<group>"; };
+		2F0543A31EC9E0E7001F8BFB /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		2F06DF2D1EB2DE830000039E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2F06DF2F1EB33F600000039E /* IndexViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
 		2F06DF311EB34C680000039E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F0543A21EC9DAE8001F8BFB /* Wish */ = {
+			isa = PBXGroup;
+			children = (
+				2F627C031EB60A8F00743BD1 /* WishViewController.swift */,
+				2F0543A01EC9DADC001F8BFB /* WishCard.swift */,
+			);
+			name = Wish;
+			sourceTree = "<group>";
+		};
 		2F7A02CB1EB39D6F00B836DB /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,13 +131,14 @@
 			isa = PBXGroup;
 			children = (
 				2F7A02C81EB3878900B836DB /* Together.entitlements */,
+				2F0543A31EC9E0E7001F8BFB /* TestViewController.swift */,
 				2F9FD4B41EB2DCEB00D001F8 /* AppDelegate.swift */,
 				2F06DF2F1EB33F600000039E /* IndexViewController.swift */,
-				2F627C031EB60A8F00743BD1 /* WishViewController.swift */,
 				2FA42B981EB4BEB8007A7078 /* FamilyAlbumViewController.swift */,
 				2F627BFF1EB538FB00743BD1 /* AlbumOverlayView.swift */,
 				2F627C011EB5B75E00743BD1 /* TogetherTabBarViewController.swift */,
 				2F7A02CB1EB39D6F00B836DB /* Login */,
+				2F0543A21EC9DAE8001F8BFB /* Wish */,
 				2F7A02CC1EB39D7C00B836DB /* List */,
 				2F7A02CD1EB39D8300B836DB /* Health */,
 				2F9FD4B81EB2DCEB00D001F8 /* Main.storyboard */,
@@ -293,9 +307,11 @@
 				2F9FD4B51EB2DCEB00D001F8 /* AppDelegate.swift in Sources */,
 				2F627C021EB5B75E00743BD1 /* TogetherTabBarViewController.swift in Sources */,
 				2FA42B991EB4BEB8007A7078 /* FamilyAlbumViewController.swift in Sources */,
+				2F0543A11EC9DADC001F8BFB /* WishCard.swift in Sources */,
 				2F627C001EB538FB00743BD1 /* AlbumOverlayView.swift in Sources */,
 				2F627C041EB60A8F00743BD1 /* WishViewController.swift in Sources */,
 				2F06DF321EB34C680000039E /* ListViewController.swift in Sources */,
+				2F0543A41EC9E0E7001F8BFB /* TestViewController.swift in Sources */,
 				2F06DF301EB33F600000039E /* IndexViewController.swift in Sources */,
 				2F7A02CA1EB39C7400B836DB /* GetHealthData.swift in Sources */,
 				2FD334211EB360DD000F409F /* HealthViewController.swift in Sources */,

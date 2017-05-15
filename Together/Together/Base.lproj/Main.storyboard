@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="MXH-4Q-gnv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KWw-Gz-DTd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -938,10 +938,27 @@
                                     <navigationItem title="心愿清单" id="yYV-pl-W4I">
                                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="5bC-o2-pH0">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="backIndexView:" destination="A6L-ju-Njd" id="jrX-Nq-u5I"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wishNav" translatesAutoresizingMaskIntoConstraints="NO" id="YAz-jR-Y68">
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdc-QC-csV">
+                                <rect key="frame" x="31" y="64" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JeC-ne-6gS">
+                                <rect key="frame" x="295" y="64" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -949,6 +966,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40P-j2-3Mh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="752.79999999999995" y="1541.3793103448277"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="3Gm-ja-wOu">
+            <objects>
+                <viewController id="KWw-Gz-DTd" customClass="TestViewController" customModule="Together" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mNA-OL-kB7"/>
+                        <viewControllerLayoutGuide type="bottom" id="TxO-8D-ZzC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Dl-Tr-UxR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wishCardBackground" translatesAutoresizingMaskIntoConstraints="NO" id="NpV-ps-XzS">
+                                <rect key="frame" x="25" y="392" width="324" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wishbottle-g0" translatesAutoresizingMaskIntoConstraints="NO" id="Q2i-y3-4eP">
+                                <rect key="frame" x="38" y="417" width="34" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tn0-bY-yd2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1978.4000000000001" y="1754.5727136431785"/>
         </scene>
     </scenes>
     <resources>
@@ -988,6 +1033,9 @@
         <image name="loginPasswordIcon" width="39" height="49"/>
         <image name="loginUserIcon" width="59" height="59"/>
         <image name="wishBackground" width="763" height="1006"/>
+        <image name="wishCardBackground" width="648" height="179"/>
+        <image name="wishNav" width="752" height="123"/>
+        <image name="wishbottle-g0" width="68" height="83"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nwl-Eg-yLi"/>
