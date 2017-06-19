@@ -12,10 +12,10 @@ import PageMenu
 class WishViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   @available(iOS 2.0, *)
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return WishCard(positionX: 0, positionY: 0)
+    return WishCard(positionX: 20, positionY: 100)
   }
 
-  let wishListTable = UITableView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+  let wishListTable = UITableView(frame: CGRect(x: 0, y: 0, width: 500, height: 200))
   
   @IBAction func backIndexView(_ sender: UIBarButtonItem) {
     self.dismiss(animated: true, completion: nil)
@@ -29,7 +29,7 @@ class WishViewController: UIViewController, UITableViewDelegate, UITableViewData
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 5
+    return 200
   }
   
   func tableView(_ tableView: UITableView, indentationLevelForRowAt indexPath: IndexPath) -> Int {
